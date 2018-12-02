@@ -1,0 +1,24 @@
+
+.vidbox{
+	max-width: 650px;
+	height: 450px;
+	background-color: black;
+	border: 1px solid grey;
+}
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.b{
+	background-color: grey;
+}
+
+.is-horizontal-center {
+	display:flex;
+  justify-content: center;
+}
+
+.toolbar{
+	padding:5px;
+}

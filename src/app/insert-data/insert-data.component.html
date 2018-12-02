@@ -1,0 +1,17 @@
+<h2 class="subtitle is-4"><span class="title is-3">1. </span>Insert Data</h2>
+<hr>
+<div class="form">
+  <div class="field">
+    <div class="control">
+      <textarea #tempref id="textarea" class="textarea is-primary" placeholder="Copy & paste data set"></textarea>
+    </div>
+  </div>
+</div>
+<p>or</p>
+<button class="button">Upload File</button>
+<br>
+<br>
+<input id="headers" name="headers" type="checkbox" />
+<label for="headers"> Does data include headers?</label>
+<br>
+<button class="button" (click)="submit(tempref.value)">Submit</button>

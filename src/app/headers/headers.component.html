@@ -1,0 +1,25 @@
+<p>
+  headers works!
+</p>
+<button class="button">Set</button>
+<div class="container">
+  <div *ngFor="let header of headers">
+    <div class="field is-grouped">
+      {{header}}
+      <div class="control">
+        <div class="select">
+          <select width="10px">
+            <option>Interval</option>
+            <option>Ordinal</option>
+            <option>Nominal</option>
+          </select>
+        </div>
+      </div>
+      <div class="control">
+        <input class="input" size="10" type="text" placeholder="Text input">
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+</div>
