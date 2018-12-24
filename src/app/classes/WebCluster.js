@@ -40,6 +40,7 @@ import {Kmeans} from './Kmeans.js';
         this.kmeans.run(this.normalizedData, this.columnDataType, numClusters, alpha, beta, maxIterations);
         //this.labels = 
         //this.clusters = this.kmeans.clusters;
+        
     }
     findColumnMaxs() {
         let output = [];
@@ -95,7 +96,7 @@ import {Kmeans} from './Kmeans.js';
         for (let i = 0; i < dataSet.length; i++) {
 
             for (let j = 0; j < dataSet[0].length; j++) {
-                let x = this.dataSet[i][j];
+                let x = dataSet[i][j];
                 let min = this.columnMinValues[j];
                 let max = this.columnMaxValues[j];
                 if (max != 'NA') {

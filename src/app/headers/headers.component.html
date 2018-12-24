@@ -1,25 +1,33 @@
 <p>
-  headers works!
+    headers works!
 </p>
-<button class="button">Set</button>
 <div class="container">
-  <div *ngFor="let header of headers">
-    <div class="field is-grouped">
-      {{header}}
-      <div class="control">
-        <div class="select">
-          <select width="10px">
-            <option>Interval</option>
-            <option>Ordinal</option>
-            <option>Nominal</option>
-          </select>
+    <div [formGroup]="headerForm">
+        <div formArrayName="headerInput">
+            <h3>Headers</h3>
+            <div *ngFor="let input of headerInput.controls; let i=index">
+                <div [formGroupName]="i">
+                    <div class="field is-grouped">
+                        {{i}}, <span *ngIf="headers.length>0">{{headers[i]}}</span>
+                        <div class="control">
+                            <div class="select">
+                                <select width="10px" formControlName="dataType">
+                                    <option>Interval</option>
+                                    <option>Ordinal</option>
+                                    <option>Nominal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <input class="input" size="10" type="text" placeholder="Text input" formControlName="weight">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="control">
-        <input class="input" size="10" type="text" placeholder="Text input">
-      </div>
     </div>
-    <br>
-    <br>
-  </div>
+    <button (click)="setUp()" class="button">SetUp</button>
+    <button (click)="update()" class="button">Update</button>
 </div>

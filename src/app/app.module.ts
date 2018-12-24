@@ -8,6 +8,9 @@ import { HeadersComponent } from './headers/headers.component';
 import { InsertDataComponent } from './insert-data/insert-data.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule }   from '@angular/forms';
+import {ReactiveFormsModule} from "@angular/forms";
+import { ClusterConfigComponent } from './cluster-config/cluster-config.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,12 +18,14 @@ import { FormsModule }   from '@angular/forms';
     HomeComponent,
     HeadersComponent,
     InsertDataComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ClusterConfigComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
