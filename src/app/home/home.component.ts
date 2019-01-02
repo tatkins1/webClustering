@@ -1,5 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as Plotly from 'plotly.js/dist/plotly-basic.js';
+
+interface trace{
+	x:number[];
+	y:number[];
+	mode:String;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,19 +17,12 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.basicChart()
   }
-basicChart(){
-	const element = this.el.nativeElement;
+  something(){
+ 
 
-	const data =[{
-		x: [1,2,3,4,5],
-		y: [2,4,8,16,32]
-	}]
-	const style ={
-		margin: {t:0}
-	}
-	console.log(Object.keys(Plotly));
-	Plotly.plot(element, data, style);
+  }
+
+
 }
-}
+

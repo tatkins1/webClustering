@@ -13,6 +13,7 @@ import {Kmeans} from './Kmeans.js';
         this.kmeans = new Kmeans();
         this.dataHeaders=[];
 
+
     }
     setHeaders(headers){
         this.dataHeaders=headers;
@@ -39,7 +40,13 @@ import {Kmeans} from './Kmeans.js';
     		//normalize data
         this.kmeans.run(this.normalizedData, this.columnDataType, numClusters, alpha, beta, maxIterations);
         //this.labels = 
-        //this.clusters = this.kmeans.clusters;
+        this.clusters = this.kmeans.clusterIndices.map((indices)=>{
+            return indices.map((index)=>{
+                return this.normalizedData[index];
+            })
+        });
+        console.log("web cluster clusters");
+        console.log(this.clusters);
         
     }
     findColumnMaxs() {

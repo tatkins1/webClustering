@@ -10,6 +10,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule }   from '@angular/forms';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ClusterConfigComponent } from './cluster-config/cluster-config.component';
+import { ClusterPlotComponent } from './cluster-plot/cluster-plot.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ClusterConfigComponent } from './cluster-config/cluster-config.componen
     HeadersComponent,
     InsertDataComponent,
     WelcomeComponent,
-    ClusterConfigComponent
+    ClusterConfigComponent,
+    ClusterPlotComponent
   ],
   imports: [
     BrowserModule,

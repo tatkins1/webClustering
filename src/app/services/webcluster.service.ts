@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {WebCluster} from '../classes/WebCluster.js';
+import * as PCA from 'ml-pca';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,9 @@ export class WebclusterService {
   }
   getData(){
     return this.webCluster.dataSet;
+  }
+  getNormalizedData(){
+    return this.webCluster.normalizedData;
   }
   setHeaders(headers:String[]){
   	headers.forEach((x)=>{
@@ -39,6 +43,14 @@ export class WebclusterService {
   }
   plotCluster(){
 
+  }
+  getClusters(){
+    return this.webCluster.clusters;
+  }
+  pcaTest(dataSet){
+    let pca = new PCA(dataSet);
+    console.log("explained variance");
+    console.log(pca.getExplainedVariance());
   }
   cluster(numclusters:number,alpha:number, beta:number, maxIterations:number){
     this.webCluster.runKmeans(numclusters,alpha,beta,maxIterations); 

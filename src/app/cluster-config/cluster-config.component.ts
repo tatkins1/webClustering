@@ -22,6 +22,7 @@ export class ClusterConfigComponent implements OnInit {
     console.log(this.wcs.getData());
     console.log(this.wcs.getDataType());
     this.wcs.webCluster.normalizeDataSet(this.wcs.getData(),this.wcs.getDataType());
+    this.wcs.pcaTest(this.wcs.webCluster.normalizedData);
     console.log(`normalized data : = ${this.wcs.webCluster.normalizedData}`);
   	this.wcs.cluster(this.numClusters, 1,1,100);
   }

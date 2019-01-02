@@ -1,7 +1,7 @@
 export class Kmeans {
     constructor() {
         this.matrix = [];
-        this.clusters = [];
+        this.clusterIndices = [];
         this.centroids = [];
         this.labels = [];
         this.columnDataType = []
@@ -26,6 +26,7 @@ export class Kmeans {
         }
         console.log(`Clustering complete in ${this.iterations}`);
         console.log(`CLustering complete labels: ${this.labels}`);
+        console.log(this.clusterIndices);
 
     }
     init(matrix, columnDataType, numClusters, alpha, beta, maxIterations) {
@@ -82,11 +83,11 @@ export class Kmeans {
             new_clusters.push(cluster);
         }
 
-        this.clusters = new_clusters;
+        this.clusterIndices = new_clusters;
     }
     findNewCentroids() {
         let new_centroids = [];
-        this.clusters.forEach((cluster) => {
+        this.clusterIndices.forEach((cluster) => {
             new_centroids.push(this.findCentroid(cluster));
         });
         return new_centroids;
