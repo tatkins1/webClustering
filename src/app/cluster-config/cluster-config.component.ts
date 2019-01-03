@@ -14,11 +14,9 @@ export class ClusterConfigComponent implements OnInit {
   }
   cluster(){
   	if(!(this.numClusters&&this.algorithm)){
-  		this.numClusters=3;
+  		this.numClusters=4;
   		this.algorithm="KMEANS";
   	}
-    let datatype = ['INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'];
-    this.wcs.setDataType(datatype);
     console.log(this.wcs.getData());
     console.log(this.wcs.getDataType());
     this.wcs.webCluster.normalizeDataSet(this.wcs.getData(),this.wcs.getDataType());
