@@ -10,6 +10,7 @@ import {WebclusterService} from '../services/webcluster.service';
 })
 export class ClusterPlotComponent implements OnInit {
 	@ViewChild('chart') el: ElementRef;
+	isPlotReady:boolean=false;
   constructor(private wcs:WebclusterService) { }
 
   ngOnInit() {
@@ -42,17 +43,28 @@ let pca = new PCA(this.wcs.getNormalizedData());
 let clusters = this.wcs.getClusters();
 let data = clusters.map((cluster)=>{
 return pca.predict(cluster);
-}).map((cluster)=>{
-	return toChartData(cluster);
+}).map((cluster,i)=>{
+	let name = "cluster "+i;
+	return toChartData(cluster, name);
 });
 const style ={
-		margin: {t:0}
-	}
-		Plotly.newPlot(element, data, style);
-
+		autosize: true,
+  margin: {
+  	pad:2
+	},
+	 font: {
+    family: 'Courier New, monospace',
+    size: 18,
+    color: '#f2f2f2'
+  },
+	paper_bgcolor: '#000000',
+  plot_bgcolor: '#000000'
+}
+	Plotly.newPlot(element, data, style, {responsive:true});
+this.isPlotReady=true;
 }
 }
-function toChartData(pcaArray){
+function toChartData(pcaArray,name){
 let X=[];
 let Y=[];
 pcaArray.forEach((o)=>{
@@ -63,6 +75,7 @@ Y.push(o[1]);
 return {
 	x:X,
 	y:Y,
-	mode:"markers"
+	mode:"markers",
+	name:name
 }
 }

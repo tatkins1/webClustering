@@ -1,0 +1,11 @@
+.vidbox{
+	max-width: 650px;
+	height: 450px;
+	background-color: black;
+	border: 0px solid black;
+}
+.full{
+	width: 100%;
+	height: 100%;
+}
+

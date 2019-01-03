@@ -1,10 +1,4 @@
 
-.vidbox{
-	max-width: 650px;
-	height: 450px;
-	background-color: black;
-	border: 1px solid grey;
-}
 .is-vertical-center {
   display: flex;
   align-items: center;

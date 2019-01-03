@@ -1,3 +1,9 @@
-<button (click)="plotClusters()" class="button">Plot</button>
-<div #chart>
+<div class="vidbox">
+    <div *ngIf="!isPlotReady" class="full">
+        <app-my-loader></app-my-loader>
+    </div>
+        	 <div #chart></div>
+       
 </div>
+<br>
+<button (click)="plotClusters()" class="button">Plot</button>
